@@ -1,0 +1,485 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		871AE90717BCFB0B00146DBA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 871AE90617BCFB0B00146DBA /* Foundation.framework */; };
+		871AE90917BCFB0B00146DBA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 871AE90817BCFB0B00146DBA /* CoreGraphics.framework */; };
+		871AE90B17BCFB0B00146DBA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 871AE90A17BCFB0B00146DBA /* UIKit.framework */; };
+		871AE91117BCFB0B00146DBA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 871AE90F17BCFB0B00146DBA /* InfoPlist.strings */; };
+		871AE91317BCFB0B00146DBA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 871AE91217BCFB0B00146DBA /* main.m */; };
+		871AE91717BCFB0B00146DBA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 871AE91617BCFB0B00146DBA /* AppDelegate.m */; };
+		871AE91A17BCFB0B00146DBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 871AE91817BCFB0B00146DBA /* Main.storyboard */; };
+		871AE91D17BCFB0B00146DBA /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 871AE91C17BCFB0B00146DBA /* FirstViewController.m */; };
+		871AE92017BCFB0B00146DBA /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 871AE91F17BCFB0B00146DBA /* SecondViewController.m */; };
+		871AE92217BCFB0C00146DBA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 871AE92117BCFB0C00146DBA /* Images.xcassets */; };
+		871AE92917BCFB0C00146DBA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 871AE92817BCFB0C00146DBA /* XCTest.framework */; };
+		871AE92A17BCFB0C00146DBA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 871AE90617BCFB0B00146DBA /* Foundation.framework */; };
+		871AE92B17BCFB0C00146DBA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 871AE90A17BCFB0B00146DBA /* UIKit.framework */; };
+		871AE93317BCFB0C00146DBA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 871AE93117BCFB0C00146DBA /* InfoPlist.strings */; };
+		871AE93517BCFB0C00146DBA /* RoboGuardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 871AE93417BCFB0C00146DBA /* RoboGuardTests.m */; };
+		871AE94017BCFB2400146DBA /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 871AE93E17BCFB2400146DBA /* AddressBook.framework */; };
+		871AE94117BCFB2400146DBA /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 871AE93F17BCFB2400146DBA /* AddressBookUI.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		871AE92C17BCFB0C00146DBA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 871AE8FB17BCFB0B00146DBA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 871AE90217BCFB0B00146DBA;
+			remoteInfo = RoboGuard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		871AE90317BCFB0B00146DBA /* RoboGuard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoboGuard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		871AE90617BCFB0B00146DBA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		871AE90817BCFB0B00146DBA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		871AE90A17BCFB0B00146DBA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		871AE90E17BCFB0B00146DBA /* RoboGuard-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RoboGuard-Info.plist"; sourceTree = "<group>"; };
+		871AE91017BCFB0B00146DBA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		871AE91217BCFB0B00146DBA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		871AE91417BCFB0B00146DBA /* RoboGuard-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RoboGuard-Prefix.pch"; sourceTree = "<group>"; };
+		871AE91517BCFB0B00146DBA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		871AE91617BCFB0B00146DBA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		871AE91917BCFB0B00146DBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		871AE91B17BCFB0B00146DBA /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		871AE91C17BCFB0B00146DBA /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		871AE91E17BCFB0B00146DBA /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		871AE91F17BCFB0B00146DBA /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		871AE92117BCFB0C00146DBA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		871AE92717BCFB0C00146DBA /* RoboGuardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoboGuardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		871AE92817BCFB0C00146DBA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		871AE93017BCFB0C00146DBA /* RoboGuardTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RoboGuardTests-Info.plist"; sourceTree = "<group>"; };
+		871AE93217BCFB0C00146DBA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		871AE93417BCFB0C00146DBA /* RoboGuardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoboGuardTests.m; sourceTree = "<group>"; };
+		871AE93E17BCFB2400146DBA /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		871AE93F17BCFB2400146DBA /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		871AE90017BCFB0B00146DBA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				871AE94017BCFB2400146DBA /* AddressBook.framework in Frameworks */,
+				871AE94117BCFB2400146DBA /* AddressBookUI.framework in Frameworks */,
+				871AE90917BCFB0B00146DBA /* CoreGraphics.framework in Frameworks */,
+				871AE90B17BCFB0B00146DBA /* UIKit.framework in Frameworks */,
+				871AE90717BCFB0B00146DBA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		871AE92417BCFB0C00146DBA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				871AE92917BCFB0C00146DBA /* XCTest.framework in Frameworks */,
+				871AE92B17BCFB0C00146DBA /* UIKit.framework in Frameworks */,
+				871AE92A17BCFB0C00146DBA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		871AE8FA17BCFB0B00146DBA = {
+			isa = PBXGroup;
+			children = (
+				871AE90C17BCFB0B00146DBA /* RoboGuard */,
+				871AE92E17BCFB0C00146DBA /* RoboGuardTests */,
+				871AE90517BCFB0B00146DBA /* Frameworks */,
+				871AE90417BCFB0B00146DBA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		871AE90417BCFB0B00146DBA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				871AE90317BCFB0B00146DBA /* RoboGuard.app */,
+				871AE92717BCFB0C00146DBA /* RoboGuardTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		871AE90517BCFB0B00146DBA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				871AE93E17BCFB2400146DBA /* AddressBook.framework */,
+				871AE93F17BCFB2400146DBA /* AddressBookUI.framework */,
+				871AE90617BCFB0B00146DBA /* Foundation.framework */,
+				871AE90817BCFB0B00146DBA /* CoreGraphics.framework */,
+				871AE90A17BCFB0B00146DBA /* UIKit.framework */,
+				871AE92817BCFB0C00146DBA /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		871AE90C17BCFB0B00146DBA /* RoboGuard */ = {
+			isa = PBXGroup;
+			children = (
+				871AE91517BCFB0B00146DBA /* AppDelegate.h */,
+				871AE91617BCFB0B00146DBA /* AppDelegate.m */,
+				871AE91817BCFB0B00146DBA /* Main.storyboard */,
+				871AE91B17BCFB0B00146DBA /* FirstViewController.h */,
+				871AE91C17BCFB0B00146DBA /* FirstViewController.m */,
+				871AE91E17BCFB0B00146DBA /* SecondViewController.h */,
+				871AE91F17BCFB0B00146DBA /* SecondViewController.m */,
+				871AE92117BCFB0C00146DBA /* Images.xcassets */,
+				871AE90D17BCFB0B00146DBA /* Supporting Files */,
+			);
+			path = RoboGuard;
+			sourceTree = "<group>";
+		};
+		871AE90D17BCFB0B00146DBA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				871AE90E17BCFB0B00146DBA /* RoboGuard-Info.plist */,
+				871AE90F17BCFB0B00146DBA /* InfoPlist.strings */,
+				871AE91217BCFB0B00146DBA /* main.m */,
+				871AE91417BCFB0B00146DBA /* RoboGuard-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		871AE92E17BCFB0C00146DBA /* RoboGuardTests */ = {
+			isa = PBXGroup;
+			children = (
+				871AE93417BCFB0C00146DBA /* RoboGuardTests.m */,
+				871AE92F17BCFB0C00146DBA /* Supporting Files */,
+			);
+			path = RoboGuardTests;
+			sourceTree = "<group>";
+		};
+		871AE92F17BCFB0C00146DBA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				871AE93017BCFB0C00146DBA /* RoboGuardTests-Info.plist */,
+				871AE93117BCFB0C00146DBA /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		871AE90217BCFB0B00146DBA /* RoboGuard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 871AE93817BCFB0C00146DBA /* Build configuration list for PBXNativeTarget "RoboGuard" */;
+			buildPhases = (
+				871AE8FF17BCFB0B00146DBA /* Sources */,
+				871AE90017BCFB0B00146DBA /* Frameworks */,
+				871AE90117BCFB0B00146DBA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RoboGuard;
+			productName = RoboGuard;
+			productReference = 871AE90317BCFB0B00146DBA /* RoboGuard.app */;
+			productType = "com.apple.product-type.application";
+		};
+		871AE92617BCFB0C00146DBA /* RoboGuardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 871AE93B17BCFB0C00146DBA /* Build configuration list for PBXNativeTarget "RoboGuardTests" */;
+			buildPhases = (
+				871AE92317BCFB0C00146DBA /* Sources */,
+				871AE92417BCFB0C00146DBA /* Frameworks */,
+				871AE92517BCFB0C00146DBA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				871AE92D17BCFB0C00146DBA /* PBXTargetDependency */,
+			);
+			name = RoboGuardTests;
+			productName = RoboGuardTests;
+			productReference = 871AE92717BCFB0C00146DBA /* RoboGuardTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		871AE8FB17BCFB0B00146DBA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = slayer;
+				TargetAttributes = {
+					871AE92617BCFB0C00146DBA = {
+						TestTargetID = 871AE90217BCFB0B00146DBA;
+					};
+				};
+			};
+			buildConfigurationList = 871AE8FE17BCFB0B00146DBA /* Build configuration list for PBXProject "RoboGuard" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 871AE8FA17BCFB0B00146DBA;
+			productRefGroup = 871AE90417BCFB0B00146DBA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				871AE90217BCFB0B00146DBA /* RoboGuard */,
+				871AE92617BCFB0C00146DBA /* RoboGuardTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		871AE90117BCFB0B00146DBA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				871AE92217BCFB0C00146DBA /* Images.xcassets in Resources */,
+				871AE91117BCFB0B00146DBA /* InfoPlist.strings in Resources */,
+				871AE91A17BCFB0B00146DBA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		871AE92517BCFB0C00146DBA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				871AE93317BCFB0C00146DBA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		871AE8FF17BCFB0B00146DBA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				871AE92017BCFB0B00146DBA /* SecondViewController.m in Sources */,
+				871AE91717BCFB0B00146DBA /* AppDelegate.m in Sources */,
+				871AE91D17BCFB0B00146DBA /* FirstViewController.m in Sources */,
+				871AE91317BCFB0B00146DBA /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		871AE92317BCFB0C00146DBA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				871AE93517BCFB0C00146DBA /* RoboGuardTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		871AE92D17BCFB0C00146DBA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 871AE90217BCFB0B00146DBA /* RoboGuard */;
+			targetProxy = 871AE92C17BCFB0C00146DBA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		871AE90F17BCFB0B00146DBA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				871AE91017BCFB0B00146DBA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		871AE91817BCFB0B00146DBA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				871AE91917BCFB0B00146DBA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		871AE93117BCFB0C00146DBA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				871AE93217BCFB0C00146DBA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		871AE93617BCFB0C00146DBA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		871AE93717BCFB0C00146DBA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		871AE93917BCFB0C00146DBA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RoboGuard/RoboGuard-Prefix.pch";
+				INFOPLIST_FILE = "RoboGuard/RoboGuard-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		871AE93A17BCFB0C00146DBA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RoboGuard/RoboGuard-Prefix.pch";
+				INFOPLIST_FILE = "RoboGuard/RoboGuard-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		871AE93C17BCFB0C00146DBA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RoboGuard.app/RoboGuard";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(SYSTEM_APPS_DIR)/Xcode5-DP3.app/Contents/Developer/Library/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RoboGuard/RoboGuard-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RoboGuardTests/RoboGuardTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		871AE93D17BCFB0C00146DBA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RoboGuard.app/RoboGuard";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(SYSTEM_APPS_DIR)/Xcode5-DP3.app/Contents/Developer/Library/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RoboGuard/RoboGuard-Prefix.pch";
+				INFOPLIST_FILE = "RoboGuardTests/RoboGuardTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		871AE8FE17BCFB0B00146DBA /* Build configuration list for PBXProject "RoboGuard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				871AE93617BCFB0C00146DBA /* Debug */,
+				871AE93717BCFB0C00146DBA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		871AE93817BCFB0C00146DBA /* Build configuration list for PBXNativeTarget "RoboGuard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				871AE93917BCFB0C00146DBA /* Debug */,
+				871AE93A17BCFB0C00146DBA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		871AE93B17BCFB0C00146DBA /* Build configuration list for PBXNativeTarget "RoboGuardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				871AE93C17BCFB0C00146DBA /* Debug */,
+				871AE93D17BCFB0C00146DBA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 871AE8FB17BCFB0B00146DBA /* Project object */;
+}
