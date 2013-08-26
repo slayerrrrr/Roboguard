@@ -104,46 +104,48 @@
 
 //}
 
-//-(void) createContactGroup{
-//    bool foundIt = NO;
-//    // Protective - did we just not find it, or lose it?
-//     ABAddressBookRef addrBook = ABAddressBookCreateWithOptions(NULL, NULL);
-//    CFArrayRef groups = ABAddressBookCopyArrayOfAllGroups(addrBook);
-//    CFIndex numGroups = CFArrayGetCount(groups);
-//    for(CFIndex idx=0; idx<numGroups; ++idx) {
-//        ABRecordRef groupItem = CFArrayGetValueAtIndex(groups, idx);
-//        
-//        CFStringRef name = (CFStringRef)ABRecordCopyValue(groupItem, kABGroupNameProperty);
-//        //NSLog(@"Look at group named %@", name);
-//        bool isMatch = [@"RoboGuard" isEqualToString:(__bridge NSString *)name];
-//        CFRelease(name);
-//        
-//        if(isMatch) {
-//            // NSLog(@"FOUND THE GROUP ALREADY!");
-//           NSNumber *groupNum = [NSNumber numberWithInt:ABRecordGetRecordID(groupItem)];
+//-(void) createContactGroup:(NSString*)groupName {
+-(void) createContactGroup{
+    bool foundIt = NO;
+    
+
+    ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
+    
+    
+    
+    CFArrayRef groups = ABAddressBookCopyArrayOfAllGroups(addressBook);
+    CFIndex numGroups = CFArrayGetCount(groups);
+    for(CFIndex idx=0; idx<numGroups; ++idx) {
+        ABRecordRef groupItem = CFArrayGetValueAtIndex(groups, idx);
+        
+        CFStringRef name = (CFStringRef)ABRecordCopyValue(groupItem, kABGroupNameProperty);
+        //NSLog(@"Look at group named %@", name);
+        bool isMatch = [@"RoboGuard" isEqualToString:(__bridge NSString *)name];
+        CFRelease(name);
+        
+        if(isMatch) {
+//             NSLog(@"FOUND THE GROUP ALREADY!");
+            NSNumber *groupNum = [NSNumber numberWithInt:ABRecordGetRecordID(groupItem)];
 //            [self setObject:groupNum forKey:kGroupID];
-//            foundIt = YES;
-//            break;
-//        }
-//    }
-//    CFRelease(groups);
-//    
-//    if(!foundIt) {
-//        // lets create one
-//        ABRecordRef groupItem = ABGroupCreate();
-//        ABRecordSetValue(groupItem, kABGroupNameProperty, (CFStringRef *)newName, &error);
-//        if(!error) {
-//            ABAddressBookAddRecord (addrBook, groupItem, &error);   // bool ret =
-//            ABAddressBookSave(addrBook, &error);
-//            
-//            groupNum = [NSNumber numberWithInt:ABRecordGetRecordID(groupItem)];
-//            //NSLog(@"FIRST groupNumber: %@", groupNum);
-//            [self setObject:groupNum forKey:kGroupID];
-//        }
-//        CFRelease(groupItem);
-//    }
-//
-//}
+            foundIt = YES;
+            break;
+        }
+    }
+    CFRelease(groups);
+    
+        if(!foundIt){
+    
+            ABRecordRef newGroup = ABGroupCreate();
+            ABRecordSetValue(newGroup, kABGroupNameProperty,@"RoboGuard", nil);
+            ABAddressBookAddRecord(addressBook, newGroup, nil);
+            ABAddressBookSave(addressBook, nil);
+            CFRelease(addressBook);
+    
+            //!!! important - save groupID for later use
+            NSInteger *groupId = ABRecordGetRecordID(newGroup);
+            CFRelease(newGroup);
+                }
+}
 
 -(void) copyDataFromAddressBook{
 
