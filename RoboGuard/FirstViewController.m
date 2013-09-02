@@ -7,12 +7,14 @@
 //
 
 #import "FirstViewController.h"
-
 @interface FirstViewController ()
 
 @end
 
 @implementation FirstViewController
+//@synthesize
+//navigationController =
+
 
 
 - (void)peoplePickerNavigationControllerDidCancel:
@@ -59,97 +61,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationItem.title=@"allowed contact";
      self.abContactFirstNameArray=[[NSMutableArray alloc] init];
 	// Do any additional setup after loading the view, typically from a nib.
-//    [self askAccessToAddressBook];
-    [self createContactGroup];
+
+    self.navigationBar.topItem.title=@"allowed callers";
+
+
     [self copyDataFromAddressBook];
 }
 
-//-(void) askAccessToAddressBook{
 
-//    ABAddressBookRef addressBookRef = ABAddressBookCreateWithOptions(NULL, NULL);
-
-//    if (ABAddressBookRequestAccessWithCompletion == NULL)
-//    {
-//        // iOS5 or Below
-//        [self setupViewWithContactsData];
-//        return;
-//    }
-//    else
-//    {
-//        // iOS6
-//        if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusNotDetermined)
-//        {
-//            ABAddressBookRequestAccessWithCompletion(addressBookRef, ^(bool granted, CFErrorRef error) {
-//                if(error)
-//                {
-//                    [self setupViewWithoutContactsData];
-//                }
-//                else
-//                {
-//                    [self setupViewWithContactsData];
-//                }
-//            });
-//        }
-//        else if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized)
-//        {
-//            [self setupViewWithContactsData];
-//        }
-//        else
-//        {
-//            [self setupViewWithoutContactsData];
-//        }
-//    }
-
-//}
-
-//-(void) createContactGroup:(NSString*)groupName {
--(void) createContactGroup{
-    bool foundIt = NO;
-    
-
-    ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
-    
-    
-    
-    CFArrayRef groups = ABAddressBookCopyArrayOfAllGroups(addressBook);
-    CFIndex numGroups = CFArrayGetCount(groups);
-    for(CFIndex idx=0; idx<numGroups; ++idx) {
-        ABRecordRef groupItem = CFArrayGetValueAtIndex(groups, idx);
-        
-        CFStringRef name = (CFStringRef)ABRecordCopyValue(groupItem, kABGroupNameProperty);
-        //NSLog(@"Look at group named %@", name);
-        bool isMatch = [@"RoboGuard" isEqualToString:(__bridge NSString *)name];
-        CFRelease(name);
-        
-        if(isMatch) {
-//             NSLog(@"FOUND THE GROUP ALREADY!");
-            NSNumber *groupNum = [NSNumber numberWithInt:ABRecordGetRecordID(groupItem)];
-//            [self setObject:groupNum forKey:kGroupID];
-            foundIt = YES;
-            break;
-        }
-    }
-    CFRelease(groups);
-    
-        if(!foundIt){
-    
-            ABRecordRef newGroup = ABGroupCreate();
-            ABRecordSetValue(newGroup, kABGroupNameProperty,@"RoboGuard", nil);
-            ABAddressBookAddRecord(addressBook, newGroup, nil);
-            ABAddressBookSave(addressBook, nil);
-            CFRelease(addressBook);
-    
-            //!!! important - save groupID for later use
-            NSInteger *groupId = ABRecordGetRecordID(newGroup);
-            CFRelease(newGroup);
-                }
-}
 
 -(void) copyDataFromAddressBook{
 
     ABAddressBookRef addressBookRef = ABAddressBookCreateWithOptions(NULL, NULL);
+        bool foundIt = NO;
     
     
     if (ABAddressBookRequestAccessWithCompletion == NULL)
@@ -196,21 +123,73 @@
 
 
             NSMutableDictionary *dicContact=[[NSMutableDictionary alloc] init];
-            NSString *str=(__bridge NSString *) ABRecordCopyValue((__bridge ABRecordRef)([self.abContactArray objectAtIndex:loop]), kABPersonFirstNameProperty);
-
-            if(str==nil){
-                [dicContact setObject:@"no name availible" forKey:@"name"];
+            NSString *str1= (__bridge NSString *) ABRecordCopyValue((__bridge ABRecordRef)([self.abContactArray objectAtIndex:loop]), kABPersonLastNameProperty);
+            NSString *str2= (__bridge NSString *) ABRecordCopyValue((__bridge ABRecordRef)([self.abContactArray objectAtIndex:loop]), kABPersonFirstNameProperty);
             
-            }
-            else{
-            [dicContact setObject:str forKey:@"name"];
 
+            if(str1==nil){
+                str1 = @"";
             }
-            [self.abContactFirstNameArray addObject:dicContact];
-            NSLog(@"%@",self.abContactFirstNameArray);
+            if(str2==nil){
+                str2 = @"";
+            }
+            NSString *str= [NSString stringWithFormat:@"%@ %@", str2,str1];
+            [dicContact setObject:str forKey:@"name"];
+            if(str1!=nil){
+
+             [dicContact setObject:str1 forKey:@"lastname"];
+            }
+            if(str2!=nil){
+                
+                [dicContact setObject:str2 forKey:@"firstname"];
+                
+            }
+            
+                
+                [self.abContactFirstNameArray addObject:dicContact];
+//                NSLog(@"%@",self.abContactFirstNameArray);
+
+            if([str isEqualToString:@" "]){
+                [dicContact setObject:@"no name availible" forKey:@"name"];
+            }
+
         }
+        CFArrayRef groups = ABAddressBookCopyArrayOfAllGroups(addressBookRef);
+        CFIndex numGroups = CFArrayGetCount(groups);
+        for(CFIndex idx=0; idx<numGroups; ++idx) {
+            ABRecordRef groupItem = CFArrayGetValueAtIndex(groups, idx);
+            
+            CFStringRef name = (CFStringRef)ABRecordCopyValue(groupItem, kABGroupNameProperty);
+            //NSLog(@"Look at group named %@", name);
+            bool isMatch = [@"RoboGuardTest" isEqualToString:(__bridge NSString *)name];
+            CFRelease(name);
+            
+            if(isMatch) {
+                ABGroupAddMember(groupItem, record, nil); // add the person to the group
+                //
+                ABAddressBookSave(addressBookRef, nil);
+                
+                foundIt = YES;
+                break;
+            }
+
+        }
+        CFRelease(groups);
+        
+        if(!foundIt){
+            
+            ABRecordRef newGroup = ABGroupCreate();
+            ABRecordSetValue(newGroup, kABGroupNameProperty,@"RoboGuardTest", nil);
+            ABAddressBookAddRecord(addressBookRef, newGroup, nil);
+            ABAddressBookSave(addressBookRef, nil);
+            CFRelease(addressBookRef);
+
+            
+            CFRelease(newGroup);
+        }
+        
     }
-    NSLog(@"%@",self.abContactFirstNameArray);
+//    NSLog(@"%@",self.abContactFirstNameArray);
 }
 
 #pragma mark - TableView Delegate
@@ -220,7 +199,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 30;
+    return 44;
 }
 
 // Customize the appearance of table view cells.
@@ -236,13 +215,33 @@
                                        reuseIdentifier: cellIdentifier];
     }
     
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    NSLog(@"%@",self.abContactFirstNameArray);
-    [self.abContactFirstNameArray sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]];
+    cell.accessoryType = UITableViewCellAccessoryNone;
+//    NSLog(@"%@",self.abContactFirstNameArray);
+    [self.abContactFirstNameArray sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"lastname" ascending:YES]]];
+    
     
     cell.textLabel.text = [[self.abContactFirstNameArray objectAtIndex:indexPath.row] objectForKey:@"name"];
 
     
     return cell;
 }
+
+
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+//
+//NSString *title =@"是否";
+//    return title;
+//}
+
+
+-(IBAction)addContactButtonPressed:(id)sender{
+    ABPeoplePickerNavigationController *picker =
+    [[ABPeoplePickerNavigationController alloc] init];
+    picker.peoplePickerDelegate = self;
+    
+    [self presentModalViewController:picker animated:YES];
+
+}
+
+
 @end
