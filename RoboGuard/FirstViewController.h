@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AddressBookUI/AddressBookUI.h>
 
+#define kFilename       @"data.plist"
 NSMutableArray *abContactArray;
 NSMutableArray *abContactFirstNameArray;
 
@@ -30,6 +31,11 @@ NSMutableArray *abContactFirstNameArray;
 
 -(void)createContactGroup;
 -(void)copyDataFromAddressBook;
+-(void)loadDataFromNative;
 -(IBAction)addContactButtonPressed:(id)sender;
 //-(void)addPersonToGroup;
+
+-(NSString* )dataFilePath;
+-(void)applicationWillResignActive:(NSNotification *)notifacation;
+
 @end

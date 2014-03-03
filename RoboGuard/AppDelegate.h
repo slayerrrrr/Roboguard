@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+int launchCount;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+
 
 @property (strong, nonatomic) UIWindow *window;
 

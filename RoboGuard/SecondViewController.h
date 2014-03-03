@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
 @interface SecondViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *sendMailButton;
+@property (weak, nonatomic) IBOutlet UIButton *sendMessageButton;
 
+
+-(IBAction)sendMailButtonPressed:(id)sender;
+
+-(IBAction)sendMessageButtonPressed:(id)sender;
 @end

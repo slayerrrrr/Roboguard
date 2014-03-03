@@ -2,8 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>EB886E2C-858D-4D57-A556-9119FF7326C2</string>
+	<string>DB784192-73F2-43FC-9D8C-8469BEA9E3B2</string>
 	<key>IDESourceControlProjectName</key>
 	<string>RoboGuard</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -11,12 +13,10 @@
 		<key>56B66DDD-CEFD-4149-97DD-0560065253CD</key>
 		<string>https://github.com/slayerrrrr/Roboguard.git</string>
 	</dict>
-	<key>IDESourceControlProjectPath</key>
-	<string>RoboGuard.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>56B66DDD-CEFD-4149-97DD-0560065253CD</key>
-		<string>../..</string>
+		<string>../../../Roboguard</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/slayerrrrr/Roboguard.git</string>

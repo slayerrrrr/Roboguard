@@ -13,6 +13,27 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    NSUserDefaults  *padFactoids;
+    
+    
+    padFactoids = [NSUserDefaults standardUserDefaults];
+    launchCount = [padFactoids integerForKey:@"launchCount" ] + 1;
+    [padFactoids setInteger:launchCount forKey:@"launchCount"];
+    [padFactoids synchronize];
+    
+    NSLog(@"number of times: %i this app has been launched", launchCount);
+    
+    if ( launchCount == 1 )
+    {
+        NSLog(@"this is the FIRST LAUNCH of the app");
+        // do stuff here as you wish
+    }
+//    if ( launchCount == 2 )
+//    {
+//        NSLog(@"this is the SECOND launch of the damn app");
+//        // do stuff here as you wish
+//    }
+    
     return YES;
 }
 							
@@ -42,5 +63,6 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
 
 @end
