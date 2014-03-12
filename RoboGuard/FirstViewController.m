@@ -13,13 +13,17 @@
 @end
 
 @implementation FirstViewController
+@synthesize addContactButton,navigationBar;
+-(void)createContactGroup{}
 
 
 
 - (void)peoplePickerNavigationControllerDidCancel:
 (ABPeoplePickerNavigationController *)peoplePicker
 {
-    [self dismissModalViewControllerAnimated:YES];
+//    [self dismisslViewControllerAnimated:YES ];
+    [self dismissViewControllerAnimated:YES completion:nil];
+//    [self presentedViewController: ]
 }
 
 - (BOOL)peoplePickerNavigationController:
@@ -27,7 +31,7 @@
       shouldContinueAfterSelectingPerson:(ABRecordRef)person {
     
 
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
     
     return NO;
 }
@@ -405,7 +409,8 @@
     [[ABPeoplePickerNavigationController alloc] init];
     picker.peoplePickerDelegate = self;
     
-    [self presentModalViewController:picker animated:YES];
+//    [self presentModalViewController:picker animated:YES];
+    [self presentViewController:picker animated:YES completion:nil];
 
 }
 

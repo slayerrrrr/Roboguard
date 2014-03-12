@@ -10,7 +10,7 @@
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
 
-@interface SecondViewController : UIViewController
+@interface SecondViewController : UIViewController <MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *sendMailButton;
 @property (weak, nonatomic) IBOutlet UIButton *sendMessageButton;
 

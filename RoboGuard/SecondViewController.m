@@ -8,9 +8,10 @@
 
 #import "SecondViewController.h"
 
-@interface SecondViewController ()
+//@interface SecondViewController ()
+//@interface SecondViewController: UIViewController <MFMailComposeViewControllerDelegate>
 
-@end
+//@end
 
 @implementation SecondViewController
 
@@ -30,8 +31,9 @@
             picker.messageComposeDelegate = self;
             picker.navigationBar.tintColor = [UIColor blackColor];
 //            picker.body = [infoDictionary objectForKey:@"title"];
-            [self presentModalViewController:picker animated:YES];
-//            [picker release];
+//            [self presentViewController:picker animated:YES];
+            [self presentViewController:picker animated:YES completion:nil];
+
         }
         else{
             UIAlertView * smsCheck = [[UIAlertView alloc] initWithTitle:@"请检查短信配置" message:nil delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
@@ -63,7 +65,8 @@
 //        [controller setSubject:[infoDic objectForKey:@"title"]];
 //        [controller addAttachmentData:UIImageJPEGRepresentation(sharedImage, 1) mimeType:@"image/jpeg" fileName:@"MyFile.jpeg"];
         
-        [self presentModalViewController:controller animated:YES];
+//        [self presentViewController:controller animated:YES];
+        [self presentViewController:controller animated:YES completion:nil];
 //        [controller release];
     }
     else {
@@ -77,11 +80,11 @@
 
 
 - (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result {
-	[self dismissModalViewControllerAnimated:YES];
+	    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
-	[self dismissModalViewControllerAnimated:YES];
+	    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
